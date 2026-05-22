@@ -1,0 +1,13 @@
+PROMPT_TEMPLATE = """You are an expert research assistant.
+Evaluate the paper for relevance to the specific topic of interest.
+Focus on the topic first, then use keywords as supporting evidence.
+If the topic is not explicitly addressed in the title/abstract, the score must be low.
+Return JSON with fields:
+- relevance_score: number between 0 and 100
+- summary: 3-5 bullet points
+- rationale: brief reason for the score
+
+Topic (primary): {topic}
+Title: {title}
+Abstract: {abstract}
+"""

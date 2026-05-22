@@ -90,6 +90,8 @@ Paper records in `Included_Paper_V1.xlsx` were ingested from the following API/s
 
 Note: in the Excel file, `Reviewer 1` refers to the abstract-screening stage by Human reviewers 1 and 2, whereas `Reviewer 2` refers to the full-paper screening stage by Human reviewers 3 and 4.
 
+The reviewer-status workbook itemizes `2032` records by API/source label. The manuscript and PRISMA-style flow diagram report `2035` retrieved records; the `3`-record difference is not attributable from the workbook fields alone and should be reconciled against the original retrieval logs.
+
 | API/source label | Records | Abstract screening (Human reviewers 1 and 2) | Full-paper screening (Human reviewers 3 and 4) |
 |---|---:|---|---|
 | `pubmed` | 814 | accepted: 144; rejected: 105; pending: 565 | agreed: 17; disagreed: 116; unsure: 12; pending: 669 |
@@ -100,7 +102,7 @@ Note: in the Excel file, `Reviewer 1` refers to the abstract-screening stage by 
 | `core` | 113 | accepted: 11; rejected: 17; pending: 85 | agreed: 0; disagreed: 11; unsure: 0; pending: 102 |
 | `springer` | 35 | accepted: 4; rejected: 5; pending: 26 | agreed: 1; disagreed: 3; unsure: 0; pending: 31 |
 | `iop` | 4 | accepted: 1; rejected: 0; pending: 3 | agreed: 0; disagreed: 0; unsure: 1; pending: 3 |
-| **Total** | **2032** | **accepted: 356; rejected: 259; pending: 1417** | **agreed: 54; disagreed: 278; unsure: 25; pending: 1675** |
+| **Total itemized in workbook** | **2032** | **accepted: 356; rejected: 259; pending: 1417** | **agreed: 54; disagreed: 278; unsure: 25; pending: 1675** |
 
 ## Gemini Relevance Scoring
 
@@ -110,6 +112,7 @@ Gemini was used as a relevance-screening aid during paper ingestion:
   - Paper-specific fields: title and abstract.
   - Review-level context: **Topic Keyword**, **Inclusion Keywords**, and **Exclusion Keywords**.
   - The keyword sections were used to keep the scoring anchored to clinical evoked-potential metric relevance rather than general EEG, BCI, or machine-learning relevance.
+  - The prompt template is provided in `gemini_prompt_template.txt`.
 
 - **Model and prompt settings**
   - Model: `gemini-2.5-flash`.
@@ -133,6 +136,9 @@ Gemini was used as a relevance-screening aid during paper ingestion:
 
 - `Included_Paper_V1.xlsx`  
   Paper-screening workbook with search-query metadata and relevance-screening fields.
+
+- `gemini_prompt_template.txt`  
+  Prompt template used for Gemini-assisted relevance scoring.
 
 - `metrics.xlsx`  
   Excel version of the equation inventory.

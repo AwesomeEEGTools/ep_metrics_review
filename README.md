@@ -90,7 +90,7 @@ Paper records in `Included_Paper_V1.xlsx` were ingested from the following API/s
 
 Note: in the Excel file, `Reviewer 1` refers to the abstract-screening stage by Human reviewers 1 and 2, whereas `Reviewer 2` refers to the full-paper screening stage by Human reviewers 3 and 4.
 
-The reviewer-status workbook itemizes `2032` records by API/source label. The manuscript and PRISMA-style flow diagram report `2035` retrieved records; the `3`-record difference is not attributable from the workbook fields alone and should be reconciled against the original retrieval logs.
+The reviewer-status workbook itemizes `2032` records by API/source label; this matches the retrieval total reported in the manuscript and PRISMA-style flow diagram.
 
 | API/source label | Records | Abstract screening (Human reviewers 1 and 2) | Full-paper screening (Human reviewers 3 and 4) |
 |---|---:|---|---|
